@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>拐杖糖射擊</title>
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <link rel="stylesheet" href="game1/reset.css" />
+    <link rel="stylesheet" href="game1/style.css" />  
+    <script type="text/javascript" src="game1/js/jquery3.3.1.min.js"></script>
+    <script type="text/javascript" src="game1/js/ctrl.js"></script>  
+</head>
+
+<body>
+<div class="activity-main">   
+    <div class="banner">        
+        <a href="javascript:;" class="jsService kefu pc kefu-right" onclick=""
+        sc-attr="buttonClick|page_button:新客活动,first_model:banner,button_name:在线客服"
+        data-stat="click,kef,lp_v300dfn">在线客服</a>
+        <div class="badge"></div>
+        <div class="runText"></div>
+    </div>
+    <div class="section1">
+        <div class="gameRule">
+            <h5>游戏规则</h5>           
+            <p>页面上出现不停转动的花圈，点击页面下方的拐杖糖，则拐杖糖会射向花圈上，在规定时间内将拐杖糖发射完毕，且不撞到花圈上的拐杖糖则过关，完成三关即可得到好吃糖果。</p>
+        </div>        
+
+        <a class="activity-btn1 gameStart" data-stat="click,game302,game1">游戏开始<div class="icon-start"></div></a>                
+        <div class="popBg" style="display: block;"></div>
+        <div class="PopupBox" id="gameOverBox" style="display: none;">
+            <div class="overBox">
+                <div class="gameBtnBox">
+                    <div class="PopupBoxBtn again btnLeft" id="gameOverBoxBtn" style="display: none;">重新开始</div>
+                    <div class="PopupBoxBtn gameAgain btnLeft">再一次</div>
+                    <div class="PopupBoxBtn btnRight" onclick="">联系客服</div>
+                </div>                
+            </div>			
+		</div>
+		<div class="PopupBox" id="gameSuccessBox" style="display: none;">
+            <div class="fireworks"></div>            
+            <div class="gameBtnBox" style="display: none;">
+                <div class="PopupBoxBtn btnRight" id="gameRestBtn" style="display: none;">重新开始</div>
+                <div class="PopupBoxBtn goService btnLeft" onclick="" style="display: none;">点我领奖</div>
+            </div> 
+            <div class="popBg2" style="display: none;"></div>
+            <div class="popMsg" style="display: none;">
+                <h5 class="title">恭喜获得报名资格</h5>
+                <div class="msgContent">
+                    <p class="info3" style="display: none;">获得<span class="fontRed fontBold">抽獎</span>与报名资格</p>
+                    <div><p>点击<span class="msgBtn" id="setBtn">下一关</span>
+                                立即享有交易</p></div>                 
+                    <div class="msgInfo">                        
+                        <p><span class="msgCommodity fontRed fontBold">草莓糖果</span><span class="msgDiscount fontBold">10</span></p>
+                        <p>最高奖励<span class="msgTopDiscount fontBold">60</span></p>
+                    </div>
+                </div>
+            </div>          
+		</div>
+		<div class="layoutRoot " id="app" data-game_id="undefined" data-openid="" style="display: block;">
+			<div class="game" id="game">				
+                <canvas id="gameStage" class="gameStage" width="800" height="600"></canvas>                
+                <div id="timebox" style="display: none;">
+                    <img class="time-left" src="game1/num/0.png" alt="">
+                    <img class="time-right" src="game1/num/0.png" alt="">
+                </div> 
+                <div class="aim"></div>
+                <img class="bg">
+				<div class="tips" style="display: none">
+					<p id="currentLevel">当前关数: <span>1</span></p>
+					<p id="gameTip"></p>
+				</div>
+				<div class="levelbox" id="levelbox" style="display: none">
+					<div class="level"><img id="level_1" src=""></div>
+					<div class="level"><img id="level_2" src=""></div>
+					<div class="level"><img id="level_3" src=""></div>
+				</div>				
+			</div>
+        </div>
+    </div>
+    <div class="section2">        
+        <div class="rule-info">
+            <div class="title">
+                <h3>奖励规则:</h3><br>
+            </div>
+            <ul>                      
+                <li>参与资格:所有激活客户点击报名并完成关卡即可获取对应奖励资格</li>
+                <li>活动时间:</li>
+                <li>奖励资格:游戏总共3关，完成一关可获取对应交易奖励资格；请参照表格</li>               
+                <table class="table" style="border-top:5px solid #fff;border-bottom: 5px solid #fff;" border="1">
+                    <tbody>
+                        <tr style="color:#ffd800; border-bottom: 5px solid #fff">
+                            <td>关卡</td>
+                            <td>对应奖励<br>
+                                产品</td>
+                            <td>对应奖励<br>
+                                </td>
+                            <td>对应奖励<br>
+                                最高金额</td>
+                        </tr>
+                        <tr>
+                            <td>第一关</td>
+                            <td>草莓糖果</td>
+                            <td>10</td>
+                            <td>60</td>
+                        </tr>
+                        <tr>
+                            <td>第二关</td>
+                            <td>牛奶糖</td>
+                            <td>20</td>
+                            <td>60</td>
+                        </tr>
+                        <tr>
+                            <td>第三关</td>
+                            <td>巧克力</td>
+                            <td>30</td>
+                            <td>60</td><br>
+                        </tr>
+                    </tbody>
+                </table><br>                
+            </ul>
+            <ul>                
+                <h3>注意事项:</h3><br>                
+            </ul>
+        </div>
+    </div>
+</div>
+    <script type="text/javascript" src="game1/js/common.js"></script>
+    <script type="text/javascript" src="game1/js/HardestGame.js"></script>
+    <!-- <script type="text/javascript" src="game1/js/hd_common.js"></script> -->
+	<script type="text/javascript" src="game1/js/index.js"></script>    
+</body>
+
+</html>
